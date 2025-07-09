@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ลงทะเบียนก่อนสอบ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>ลงทะเบียนเข้าสอบ</h2>
+
+    <label for="group">เลือกกลุ่ม:</label>
+    <select id="group" required>
+      <option value="">-- เลือกกลุ่ม --</option>
+    </select>
+
+    <br><br>
+
+    <label for="employee">เลือกชื่อพนักงาน:</label>
+    <select id="employee" required>
+      <option value="">-- เลือกชื่อ --</option>
+    </select>
+
+    <br><br>
+
+    <label for="company">สังกัดบริษัท:</label>
+    <input type="text" id="company" readonly />
+    <br><br>
+
+    <label for="testDate">วันที่สอบ:</label>
+    <input type="date" id="testDate" required />
+
+    <br><br>
+
+    <button id="startBtn">เริ่มทำข้อสอบ</button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* ================================
+   รีเซ็ตค่าเริ่มต้นของทุก element
+   - ล้าง margin, padding
+   - กำหนด box-sizing แบบ border-box
+   - ตั้งฟอนต์เริ่มต้น
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================================
+   พื้นหลังของ body และจัดตำแหน่ง
+   - ใส่พื้นหลังเป็นไล่สี (gradient)
+   - จัดให้อยู่กลางแนวตั้ง
+   - มี padding ด้านบน
+================================ */
+body {
+  background color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 10px;
+}
+
+/* ================================
+   กล่องฟอร์มหลัก
+   - กล่องสีขาว มีเงา มีขอบโค้ง
+   - กำหนดขนาดไม่เกิน 700px
+   - มี animation ตอนโหลด
+================================ */
+.form-container {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 700px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ================================
+   หัวข้อ (h2, h3, h4)
+   - กำหนดสีและระยะห่างด้านล่าง
+   - จัดชิดกลาง
+================================ */
+h2, h3, h4 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ================================
+   กลุ่มฟอร์มแต่ละชุด
+   - มีระยะห่างด้านล่าง
+================================ */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* ================================
+   ป้าย label
+   - แสดงบรรทัดใหม่
+   - ตัวหนาเล็กน้อย
+================================ */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ================================
+   ช่อง input, select, textarea
+   - ทำให้ดูเรียบร้อย ใช้งานง่าย
+   - มีขอบโค้ง สีพื้นจาง
+   - transition เวลา focus
+================================ */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+/* ================================
+   เวลาโฟกัส input
+   - เปลี่ยนขอบให้สีสด
+   - สีพื้นเป็นขาว
+================================ */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2575fc;
+  background-color: #fff;
+  outline: none;
+}
+
+/* ================================
+   ปุ่มกด
+   - ปุ่มเต็มความกว้าง
+   - ไล่สีพื้นหลัง
+   - ตัวหนังสือขาว
+   - มี effect hover
+================================ */
+button {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #5910b3, #1d61c3);
+}
+
+/* ================================
+   กล่องคำแนะนำก่อนทำแบบทดสอบ
+   - สีพื้นเทาอ่อน
+   - มี padding และขอบโค้ง
+================================ */
+.instructions {
+  background-color: #f2f2f2;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.instructions ul {
+  padding-left: 20px;
+}
+
+/* ================================
+   กล่องคำถามแต่ละข้อ
+   - สีพื้นจาง
+   - ขอบโค้ง
+   - เว้นระยะระหว่างข้อ
+================================ */
+.question-item {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.question-item p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ================================
+   Responsive สำหรับหน้าจอเล็ก
+   - ลด padding
+   - ปรับขนาดตัวอักษรของปุ่ม
+================================ */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
+
+/* ================================
+   Animation ตอนโหลด (fade in)
+   - ค่อย ๆ แสดงผลพร้อมเลื่อนขึ้น
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   ช่องกรอกเวลา (usedTime)
+   - ขนาดเล็กกว่า input ทั่วไป
+   - ชิดขวา เพราะกรอกตัวเลข
+================================ */
+#usedTime {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border 0.3s;
+  width: 150px;
+  text-align: right;
+}
+
+#usedTime:focus {
+  border-color: #2575fc;
+  background-color: #fff;
+  outline: none;
+}
+
+/* ================================
+   ตัวเลือก OK/NG ในคำถาม
+   - ให้แสดงแบบแนวตั้ง
+   - ย่อหน้าให้ดูเรียบร้อย
+================================ */
+.question-item label {
+  display: block;
+  margin-left: 25px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+/* กำหนดฟอนต์ kanit ให้กับทุก element */
+* {
+  font-family: 'Kanit', sans-serif;
+}
+
+/* ระบุเฉพาะ label ของช่อง usedTime และ accidentDetailให้เป็นสีดำ */
+label[for="usedTime"],
+label[for="accidentDetail"]{
+  color: black;
+}

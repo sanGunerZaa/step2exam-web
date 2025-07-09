@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แบบประเมินรถฟอล์คลีฟท์ Step2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h3 style="text-align: center;">แบบประเมินรถฟอล์คลีฟท์ Step2</h3>
+    <h4 style="text-align: center;">การขับรถฟอล์คลีฟท์เดินหน้าและถอยหลังบังคับเลี้ยวในทิศทางต่างๆ</h4>
+    <hr style="border-top: 2px double #000" />
+
+    <div class="instructions">
+      <h5 class="instruction-title"><u>คำชี้แจง</u></h5>
+      <ol>
+        <li>ให้ผู้ประเมินหรือผู้ควบคุมการทดสอบเลือก(OK,NG)</li>
+        <li>เกณฑ์การประเมินผู้เข้าทดสอบจะต้องทำคะแนนได้70คะแนน จึงจะถือว่าผ่านการทดสอบ</li>
+        <li>ถ้าไม่ผ่านการทดสอบครั้งที่1ให้ทดสอบครั้งที่2และ3ถ้าผ่านการทดสอบในครั้งที่2หรือ3ผลการประเมินจะได้70คะแนนเท่านั้น และถ้าทดสอบครั้งที่3ไม่ผ่านถือว่าทดสอบไม่ผ่านในครั้งนี้</li>
+        <li>ผู้เข้าทดสอบ ถ้าเวลาที่ใช้ทดสอบเกินเวลาที่กำหนด(2.10นาที) ถือว่าไม่ผ่านการทดสอบ</li>
+        <li>ถ้าผู้เข้าทดสอบเกิดอุบัติเหตุในครั้งที่3 และมีคะแนนที่ได้เกิน70คะแนน ให้ตัด30คะแนนจากคะแนนที่ได้และไม่ผ่านการทดสอบ</li>
+      </ol>
+    </div>
+
+    
+
+    <form id="assessmentForm">
+      <!-- ข้อ 1 -->
+      <div class="question-item">
+        <p>1. มือซ้ายจับปุ่มพวงมาลัย</p>
+        <label><input type="radio" name="question1" value="OK" required /> OK</label>
+        <label><input type="radio" name="question1" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 2 -->
+      <div class="question-item">
+        <p>2. มือขวาวางไว้ปุ่มควบคุมงา</p>
+        <label><input type="radio" name="question2" value="OK" required /> OK</label>
+        <label><input type="radio" name="question2" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 3 -->
+      <div class="question-item">
+        <p>3. ปรับยกงาให้ขนานและสูงจากพื้นประมาณ 15-20 เซนติเมตร</p>
+        <label><input type="radio" name="question3" value="OK" required /> OK</label>
+        <label><input type="radio" name="question3" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 4 -->
+      <div class="question-item">
+        <p>4. การตรวจสอบด้านหน้า (หน้าOK)</p>
+        <label><input type="radio" name="question4" value="OK" required /> OK</label>
+        <label><input type="radio" name="question4" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 5 -->
+      <div class="question-item">
+        <p>5. ให้สัญญาณแตรก่อนออกรถ</p>
+        <label><input type="radio" name="question5" value="OK" required /> OK</label>
+        <label><input type="radio" name="question5" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 6 -->
+      <div class="question-item">
+        <p>6. เข้าเกียร์เดินหน้า ปลดเบรกมือ</p>
+        <label><input type="radio" name="question6" value="OK" required /> OK</label>
+        <label><input type="radio" name="question6" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 7 -->
+      <div class="question-item">
+        <p>7. หยุดชี้นิ้วตรวจสอบก่อนกลับรถ (ซ้าย OK, ขวา OK)</p>
+        <label><input type="radio" name="question7" value="OK" required /> OK</label>
+        <label><input type="radio" name="question7" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 8 -->
+      <div class="question-item">
+        <p>8. ให้สัญญาณไฟเลี้ยวก่อนกลับรถ</p>
+        <label><input type="radio" name="question8" value="OK" required /> OK</label>
+        <label><input type="radio" name="question8" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 9 -->
+      <div class="question-item">
+        <p>9. จอดรถในกรอบที่กำหนด</p>
+        <label><input type="radio" name="question9" value="OK" required /> OK</label>
+        <label><input type="radio" name="question9" value="NG" /> NG</label>
+      </div>
+
+      <!-- ข้อ 10 -->
+      <div class="question-item">
+        <p>10. ปลดเกียร์ว่าง ดึงเบรกมือ</p>
+        <label><input type="radio" name="question10" value="OK" required /> OK</label>
+        <label><input type="radio" name="question10" value="NG" /> NG</label>
+      </div>
+
+      <hr />
+
+      <!-- เวลาและอุบัติเหตุ -->
+      <div class="question-item">
+        <label for="usedTime">เวลาที่ใช้ทดสอบ (นาที)</label>
+        <input
+          type="number"
+          id="usedTime"
+          name="usedTime"
+          min="0"
+          step="0.01"
+          required
+          placeholder="ตัวอย่าง 2.10"
+        />
+      </div>
+
+      <div class="question-item">
+        <label for="accidentDetail">ระบุอุบัติเหตุ (ถ้ามี)</label>
+        <textarea
+          id="accidentDetail"
+          name="accidentDetail"
+          rows="3"
+          cols="50"
+          placeholder="ระบุรายละเอียด เช่น ชนกรวย ชนราวกั้น"
+        ></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">ส่งข้อสอบ</button>
+    </form>
+  </div>
+
+  <script src="questions.js"></script>
+</body>
+</html>

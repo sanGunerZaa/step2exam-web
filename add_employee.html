@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>บันทึกข้อมูลพนักงานใหม่</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>เพิ่มข้อมูลพนักงาน</h2>
+    <form id="employeeForm">
+      <label>ชื่อ-นามสกุล
+        <input type="text" name="fullname" required>
+      </label>
+
+      <label>บริษัท (Company)
+        <input type="text" name="company" required>
+      </label>
+
+      <label>กลุ่ม (Group)
+        <input type="text" name="group_name" required>
+      </label>
+
+      <button type="submit">บันทึก</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('employeeForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('add_employee.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        if (result.status === 'success') {
+          Swal.fire({
+            icon: 'success',
+            title: 'เพิ่มพนักงานสำเร็จ',
+            confirmButtonText: 'ตกลง'
+          });
+          form.reset();
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'เกิดข้อผิดพลาด',
+            text: result.message || 'ไม่สามารถเพิ่มพนักงานได้',
+            confirmButtonText: 'ตกลง'
+          });
+        }
+      } catch (err) {
+        Swal.fire({
+          icon: 'error',
+          title: 'เชื่อมต่อไม่สำเร็จ',
+          text: err.message,
+          confirmButtonText: 'ตกลง'
+        });
+      }
+    });
+  </script>
+</body>
+</html>
