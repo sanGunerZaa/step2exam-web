@@ -109,7 +109,7 @@ window.addEventListener("DOMContentLoaded", function () {
     // ------------------------------
     // ส่งข้อมูลไปยัง submit.php
     // ------------------------------
-    fetch("http://localhost/step2online-test/submit.php", {
+    fetch("https://step2exam-web.onrender.com/submit.php", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(data),
